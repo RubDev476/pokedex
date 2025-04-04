@@ -1,0 +1,9 @@
+Para ejecutar el proyecto localmente:
+
+1- instalar todas las dependencias:
+- npm install
+
+2- ejecutar el proyecto localmente:
+- npm run dev
+
+Toda la informacion del proyecto en el archivo "README.md"

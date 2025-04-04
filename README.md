@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokédex
+Tecnologías principales:
 
-## Getting Started
+- React con Next js 15
+- TypeScript
+- Redux Toolkit
+- CSS
+- PokeAPI
 
-First, run the development server:
+## Documentación
+- [Características del proyecto](#caracteristicas-del-proyecto)
+- [Instalación](#instsalacion)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Uso del proyecto](#uso)
+
+## Características del proyecto:
+
+- Buscador de Pokemones por nombre
+- Paginación
+- Diseño responsivo
+- Manejo de estado global
+- Manejo de errores
+
+## Instalación
+
+Para instalar las dependencias del proyecto, ejecute el siguiente comando:
+
+```bash
+npm install
+```
+
+## Estructura del proyecto
+
+La estructura de carpetas del proyecto `Pokedex` es la siguiente:
+
+```
+Pokedex/
+├── public/
+│   └── ...
+├── src/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── ...
+│   ├── components/
+│   ├── store/
+│   ├── types/
+├── package.json
+├── tailwind.config.ts
+└── README.md
+```
+
+- **public/**: Imágenes del proyectp.
+- **src/**: Contiene el codigo fuente del proyecto.
+    - **app/**: Rutas de la aplicación (En este proyecto solo tiene una ruta principal).
+        - **layout.tsx**: Layout global.
+        - **page.tsx**: Página principal.
+        - **globals.css**: Todos los estilos del proyecto.
+    - **components/**: Componentes reusables de la aplicación (para Layout, Pages, y ui).
+    - **store/**: Codigo de Redux y el manejo del estado global (Slices, Hooks, Selectores y Acciones).
+    - **types**: Tipados reutilizables.
+- **package.json**: Archivo de configuracion npm.
+
+## Uso
+
+Para iniciar la aplicación en modo de desarrollo, ejecute el siguiente comando:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esto abrira la aplicacion en su navegador predeterminado en el siguiente link `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Una vez hecho lo anterior, podra ver la aplicacion con exito y funcional.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Explore la funcionalidad de la Pokédex:
 
-## Learn More
+- Busque Pokemones por nombre en la barra de búsqueda.
+- Navegue entre páginas usando el sistema de paginación.
+- Disfrute del diseño optimizado para dispositivos móviles y de escritorio.
+- Si hay errores, o no escribe por error el nombre de algun pokemon, la app ya maneja esos errores y le mostrara un mensaje de error para cualquier caso.
 
-To learn more about Next.js, take a look at the following resources:
+Si desea hacer algun cambio o añadir una nueva característica al proyecto, antes de guardar sus cambios, debe ejecutar el comando de `eslint` para garantizar la calidad y las buenas prácticas del codigo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+```

@@ -1,42 +1,247 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --text-color1: #000;
+    --text-color2: #fff;
+    --bg-color1: rgb(219, 17, 17);
+    --bg-color2: #ffcc00;
+    --bg-color2-hover: #ffaa00;
+    --bg-color2-disabled: #a17e36;
+    --bg-color3: #1d1d1d;
+
+    --max-width-content: 1200px;
+    --padding-x-container: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/*=========================== UTILS =====================*/
+.w-full {
+    width: 100%;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+    width: 100%;
+    max-width: var(--max-width-content);
+    margin: auto;
+    padding: 0 var(--padding-x-container);
 }
+
+.global-transition {
+    transition: all .3s ease-in-out;
+}
+
+.button-action {
+    background-color: var(--bg-color2);
+    color: var(--text-color1);
+    border: none;
+    border-radius: 25px;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: var(--bg-color2-disabled);
+        color: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+        background-color: var(--bg-color2-hover);
+    }
+}
+
+/* https://css-loaders.com/spinner/ */
+.loader {
+    width: 50px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--bg-color1);
+    --_m:
+        conic-gradient(#0000 10%, #000),
+        linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+.spinner-container {
+    height: 70vh;
+    width: 100%;
+}
+
+.error-message {
+    text-align: center;
+    height: 40vh;
+}
+
+/*===========================================================*/
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+header {
+    padding: 10px var(--padding-x-container);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    color: var(--text-color1);
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    img {
+        width: auto;
+        height: auto;
+    }
+
+    p {
+        font-weight: bold;
+        font-size: 20px;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.search-container {
+    background-color: var(--bg-color1);
+    margin-bottom: 35px;
+    padding: 10px var(--padding-x-container);
+
+    form {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    input {
+        max-width: 400px;
+        padding: 6px 15px;
+        border-radius: 25px;
+        font-weight: 700;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    min-height: 70vh;
+}
+
+.pokemons {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    @media screen and (width > 1200px) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .pokemon-card {
+        flex-direction: column;
+        border: solid 1px #aaaaaa;
+        padding: 20px 0;
+        max-width: 400px;
+        margin: auto;
+    
+        &:hover {
+            background-color: #dadada;
+            cursor: pointer;
+        }
+    
+        .img-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background-image: url("/pokebola.png");
+            background-size: 120px 120px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    
+        p {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 10px;
+            font-size: 24px;
+            color: var(--text-color1);
+        }
+    
+        .types {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    
+        span {
+            background-color: var(--bg-color1);
+            color: var(--text-color2);
+            border: solid 2px var(--text-color1);
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.pagination {
+    background-color: var(--bg-color1);
+    padding: 20px 0;
+    margin-top: 25px;
+
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .buttons-container {
+        gap: 20px;
+    }
+    
+    span {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--text-color2);
+    }
+}
+
+footer {
+    background-color: var(--bg-color3);
+    text-align: center;
+    padding: 30px var(--padding-x-container);
+
+    p, a {
+        color: var(--text-color2);
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 700;
+    }
 }
