@@ -8,8 +8,8 @@ Tecnologías principales:
 - PokeAPI
 
 ## Documentación
-- [Características del proyecto](#caracteristicas-del-proyecto)
-- [Instalación](#instsalacion)
+- [Características del proyecto](##caracteristicas-del-proyecto)
+- [Instalación](#instalación)
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Uso del proyecto](#uso)
 
@@ -79,7 +79,7 @@ Explore la funcionalidad de la Pokédex:
 - Busque Pokemones por nombre en la barra de búsqueda.
 - Navegue entre páginas usando el sistema de paginación.
 - Disfrute del diseño optimizado para dispositivos móviles y de escritorio.
-- Si hay errores, o no escribe por error el nombre de algun pokemon, la app ya maneja esos errores y le mostrara un mensaje de error para cualquier caso.
+- Si hay errores, o escribe por error el nombre de algun pokemon, la app ya maneja esos errores y le mostrara un mensaje de error para cualquier caso.
 
 Si desea hacer algun cambio o añadir una nueva característica al proyecto, antes de guardar sus cambios, debe ejecutar el comando de `eslint` para garantizar la calidad y las buenas prácticas del codigo:
 
