@@ -8,7 +8,7 @@ Tecnologías principales:
 - PokeAPI
 
 ## Documentación
-- [Características del proyecto](##caracteristicas-del-proyecto)
+- [Características del proyecto](#caracteristicas-del-proyecto)
 - [Instalación](#instalación)
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Uso del proyecto](#uso)
